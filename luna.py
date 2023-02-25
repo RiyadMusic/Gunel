@@ -54,7 +54,7 @@ async def type_and_send(message):
 async def repo(_, message):
     await message.reply_text(
         "[GitHub](https://github.com/RiyadMusic/Gunel)"
-        + " | [Group](t.me/Sohbetchat777)",
+        + " | [Group](t.me/Sohbetmekani77)",
         disable_web_page_preview=True,
     )
 
