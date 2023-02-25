@@ -17,7 +17,7 @@ luna = Client(
     ":memory:",
     bot_token=bot_token,
     api_id=6,
-    api_hash="eb06d4abfb49dc3eeb1aeb98ae0f581e",
+    api_hash="1ce756e879790d465304f48c36294883",
 )
 
 bot_id = int(bot_token.split(":")[0])
@@ -27,13 +27,13 @@ arq = None
 async def lunaQuery(query: str, user_id: int):
     query = (
         query
-        if LANGUAGE == "en"
-        else (await arq.translate(query, "en")).result.translatedText
+        if LANGUAGE == "az"
+        else (await arq.translate(query, "az")).result.translatedText
     )
     resp = (await arq.luna(query, user_id)).result
     return (
         resp
-        if LANGUAGE == "en"
+        if LANGUAGE == "az"
         else (
             await arq.translate(resp, LANGUAGE)
         ).result.translatedText
@@ -53,8 +53,8 @@ async def type_and_send(message):
 @luna.on_message(filters.command("repo") & ~filters.edited)
 async def repo(_, message):
     await message.reply_text(
-        "[GitHub](https://github.com/thehamkercat/LunaChatBot)"
-        + " | [Group](t.me/PatheticProgrammers)",
+        "[GitHub](https://github.com/RiyadMusic/Gunel)"
+        + " | [Group](t.me/Sohbetchat777)",
         disable_web_page_preview=True,
     )
 
@@ -82,7 +82,7 @@ async def chat(_, message):
             return
     else:
         match = re.search(
-            "[.|\n]{0,}luna[.|\n]{0,}",
+            "[.|\n]{0,}riko[.|\n]{0,}",
             message.text.strip(),
             flags=re.IGNORECASE,
         )
@@ -109,7 +109,7 @@ async def main():
     print(
         """
 -----------------
-| Luna Started! |
+| Riyad Started! |
 -----------------
 """
     )
